@@ -79,6 +79,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-header {
     width: 100%;
+    margin: -2px;
+    padding: 0px;
 }
 .logo {
     font-size: 1.8em;
