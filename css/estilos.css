@@ -1,12 +1,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap');
+
 *{
     box-sizing: border-box;
 }
+
 body{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
 }
+
+/* Icon styling */
+/* Icon styling: explicit, high-specificity rules so deployment/resets won't enlarge icons */
+img.icon {
+    display: inline-block !important;
+    width: 20px !important;
+    height: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+}
+
+/* Social circular links: keep link container fixed and ensure the inner image fits */
+.social-icon__link {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 35px !important;
+    height: 35px !important;
+    padding: 0 !important;
+}
+
+.social-icon img.icon {
+    width: 18px !important;
+    height: 18px !important;
+    max-width: 18px !important;
+    max-height: 18px !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+}
+
 /*-------------Estilos base-------------*/
 img {
     display: block;
@@ -56,10 +90,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px;
     margin: 0;
 }
-.main [class*="icon-"]:before {
-    position: relative;
-    top: 2px;
-    right: 5px;
+
+.main-header__contactInfo img.icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
 }
 /*-------------Estilos del Menú-------------*/
 .main-nav {
@@ -84,22 +119,32 @@ h1, h2, h3, h4, h5, h6 {
 .social-icon {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
-.social-icon [class*="icon-"] {
-    color: black;
-    margin-left: 10px;
-    display: flex;
+.social-icon__link {
+    text-decoration: none;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3em;
     width: 35px;
     height: 35px;
     background: white;
     border-radius: 50%;
+    color: black;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.social-icon__link {
-    text-decoration: none;
+
+.social-icon__link:hover {
+    background-color: #DE423A;
+    color: white;
+}
+
+.social-icon i {
+    display: inline-block;
+    width: auto;
+    height: auto;
 }
 .menu {
     position: absolute;
@@ -242,6 +287,46 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     top: 3px;
     right: 5px;
+}
+
+.main-footer i {
+    color: white;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+
+.main-footer img.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+}
+
+.column__txt i {
+    margin-right: 8px;
+    color: inherit;
+    width: auto;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    display: inline;
+    font-size: 1em;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #DE423A;
+}
+
+.social-link i {
+    margin-right: 8px;
 }
 
 /*-------------Estilos responsive-------------*/
