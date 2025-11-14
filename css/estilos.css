@@ -1,6 +1,3 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap');
-
 *{
     box-sizing: border-box;
 }
@@ -46,6 +43,16 @@ img {
     display: block;
     width: 100%;
     max-width: 100%;
+    loading: lazy;
+}
+
+/* Performance: will-change only for animated elements */
+.whatsapp-float {
+    will-change: transform;
+}
+
+.social-icon__link {
+    will-change: transform;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -102,18 +109,27 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     z-index: 2000;
     padding: 10px;
+    background: rgba(0,0,0,0.9);
 }
 .icon-menu {
     display: block;
     color: white;
-    border: 1px solid white;
-    border-radius: 3px;
+    border: 2px solid #DE423A;
+    border-radius: 6px;
     width: 40px;
     height: 40px;
-    line-height: 45px;
+    line-height: 40px;
     text-align: center;
     cursor: pointer;
     font-size: 1.5em;
+    background: rgba(222, 66, 58, 0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-menu:hover {
+    background: #DE423A;
+    border-color: #DE423A;
+    transform: scale(1.05);
 }
 
 .social-icon {
@@ -124,21 +140,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-icon__link {
     text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 35px;
-    height: 35px;
-    background: white;
-    border-radius: 50%;
-    color: black;
-    font-size: 1.3em;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 35px !important;
+    height: 35px !important;
+    background: white !important;
+    border-radius: 50% !important;
+    color: black !important;
+    font-size: 1.3em !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
 }
 
 .social-icon__link:hover {
-    background-color: #DE423A;
-    color: white;
+    background-color: #DE423A !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(222, 66, 58, 0.3) !important;
 }
 
 .social-icon i {
@@ -151,31 +170,67 @@ h1, h2, h3, h4, h5, h6 {
     top: 60px;
     left: 0;
     width: 100%;
-    background: rgba(0,0,0,.85);
+    background: linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(20,20,20,0.95) 100%);
     padding: 0;
     margin: 0;
     list-style: none;
     text-align: center;
     height: 0px;
     overflow: hidden;
-    transition: height .3s linear;
+    transition: height .3s ease-out;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-top: 3px solid #DE423A;
 }
+.menu__item {
+    border-bottom: 1px solid rgba(222, 66, 58, 0.2);
+}
+
+.menu__item:last-child {
+    border-bottom: none;
+}
+
 .menu__link {
     display: block;
-    padding: 15px;
+    padding: 16px 15px;
     color: white;
     text-decoration: none;
-    
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
 }
-.menu__link:hover {
+
+.menu__link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
     background: #DE423A;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
 }
+
+.menu__link:hover {
+    background: rgba(222, 66, 58, 0.15);
+    padding-left: 20px;
+}
+
+.menu__link:hover::before {
+    transform: scaleY(1);
+}
+
 .menu__link--select {
     background: #DE423A;
-
+    font-weight: 700;
 }
+
+.menu__link--select::before {
+    transform: scaleY(1);
+}
+
 .mostrar {
-    height: 196px;
+    height: 224px;
 }
 /*-------------Estilos del Banner-------------*/
 
@@ -537,6 +592,30 @@ h1, h2, h3, h4, h5, h6 {
         height: 28px !important;
         max-width: 28px !important;
         max-height: 28px !important;
+    }
+}
+
+/*-------------Image Optimization for Mobile-------------*/
+/* Preload priority hints for critical images */
+.banner__img {
+    content-visibility: auto;
+}
+
+/* Reduce quality on slow connections */
+@media (prefers-reduced-data: reduce) {
+    img {
+        opacity: 0.9;
+        filter: blur(0.5px);
+    }
+}
+
+/* Limit image sizes on mobile to reduce rendering overhead */
+@media (max-width: 768px) {
+    .gallery__img,
+    .our-team__img,
+    .today-special__img {
+        max-width: 100%;
+        height: auto;
     }
 }
 

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <title>Your Restaurant</title>
+    <!-- Performance: Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
@@ -43,7 +47,7 @@
     </nav>
 
     <section class="banner">
-        <img src="img/banner.jpg" alt="" class="banner__img">
+        <img src="img/banner.jpg" alt="Restaurant Banner" class="banner__img" loading="lazy" decoding="async" width="1920" height="500">
         <div class="banner__content">La mejor y exquisita comida está aquí</div>
     </section>
 
@@ -58,7 +62,7 @@
         <section class="group main__about__description">
             <div class="container container--flex">
                 <div class="column column--50">
-                    <img src="img/food1.jpg" alt="">
+                    <img src="img/food1.jpg" alt="" loading="lazy" decoding="async">
                 </div>
                 <div class="column column--50">
                     <h3 class="column__title">Espertise In Industrial Solution</h3>
@@ -72,17 +76,17 @@
             <h2 class="group__title">Especiales de hoy</h2>
             <div class="container container--flex">
                 <div class="column column--50-25">
-                    <img src="img/plate1.jpg" alt="" class="today-special__img">
+                    <img src="img/plate1.jpg" alt="" class="today-special__img" loading="lazy" decoding="async">
                     <div class="today-special__title">Especial del día 1</div>
                     <div class="today-special__price">$99.99</div>
                 </div>
                 <div class="column column--50-25">
-                    <img src="img/plate2.jpg" alt="" class="today-special__img">
+                    <img src="img/plate2.jpg" alt="" class="today-special__img" loading="lazy" decoding="async">
                     <div class="today-special__title">Especial del día 2</div>
                     <div class="today-special__price">$99.99</div>
                 </div>
                 <div class="column column--50-25">
-                    <img src="img/plate3.jpg" alt="" class="today-special__img">
+                    <img src="img/plate3.jpg" alt="" class="today-special__img" loading="lazy" decoding="async">
                     <div class="today-special__title">Especial del día 3</div>
                     <div class="today-special__price">$99.99</div>
                 </div>
@@ -123,6 +127,6 @@
         <img src="img/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
 
-    <script src="js/menu.js"></script>
+    <script src="js/menu.js" defer></script>
 </body>
 </html>

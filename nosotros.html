@@ -5,8 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
     <title>Nosotros | Your Restaurant</title>
+    <!-- Performance: Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/nosotros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="main-header">
@@ -44,7 +48,7 @@
     </nav>
 
     <section class="banner">
-        <img src="img/banner-about.jpg" alt="" class="banner__img">
+        <img src="img/banner-about.jpg" alt="" class="banner__img" loading="lazy" decoding="async">
         <div class="banner__content">La mejor de nosotros a tú servicio</div>
     </section>
 
@@ -61,17 +65,17 @@
             <div class="container container--flex">
                 <div class="column column--33">
                     <h3 class="our-team__title">Tania</h3>
-                    <img src="img/chef1.jpg" alt="" class="our-team__img">
+                    <img src="img/chef1.jpg" alt="" class="our-team__img" loading="lazy" decoding="async">
                     <p class="our-team__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, natus. Sapiente labore similique nobis, placeat assumenda corporis aliquam consectetur doloribus.</p>
                 </div>
                 <div class="column column--33">
                     <h3 class="our-team__title">Edith</h3>
-                    <img src="img/chef2.jpg" alt="" class="our-team__img">
+                    <img src="img/chef2.jpg" alt="" class="our-team__img" loading="lazy" decoding="async">
                     <p class="our-team__txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim rem optio fuga quasi iste sunt minima. Placeat facilis similique earum.</p>
                 </div>
                 <div class="column column--33">
                     <h3 class="our-team__title">Noemi</h3>
-                    <img src="img/chef3.jpg" alt="" class="our-team__img">
+                    <img src="img/chef3.jpg" alt="" class="our-team__img" loading="lazy" decoding="async">
                     <p class="our-team__txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate a laudantium id, quia magnam doloremque ratione aut natus consequatur sit.</p>
                 </div>
             </div>    
@@ -106,6 +110,6 @@
         <img src="img/icons/whatsapp.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
 
-    <script src="js/menu.js"></script>
+    <script src="js/menu.js" defer></script>
 </body>
 </html>
